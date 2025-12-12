@@ -104,7 +104,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6 animate-fade-up">
               <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium border border-white/20">
-                🚀 L'innovation au service de l'Afrique
+                 L'innovation au service de l'Afrique
               </span>
             </div>
             

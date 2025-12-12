@@ -7,9 +7,11 @@ import SectionTitle from "../components/SectionTitle";
 import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/ui/button";
 import aboutTeam from "../assets/about-team.jpg";
-import teamCeo from "../assets/team-ceo.jpg";
-import teamDg from "../assets/team-dg.jpg";
-import teamSecretary from "../assets/team-secretary.jpg";
+
+// 🟢 Ici on utilise tes vrais fichiers image
+import teamCeo from "../assets/PDg.jpg";
+import teamDg from "../assets/DG.jpg";
+import teamSecretary from "../assets/SECRE.jpg";
 
 const About = () => {
   const [visibleSections, setVisibleSections] = useState({});
