@@ -8,7 +8,7 @@ import AnimatedTitle from "../components/AnimatedTitle";
 import { Button } from "../components/ui/button";
 import aboutTeam from "../assets/about-team.jpg";
 
-// 🟢 Ici on utilise tes vrais fichiers image
+// Ici on utilise tes vrais fichiers image
 import teamCeo from "../assets/PDg.jpg";
 import teamDg from "../assets/DG.jpg";
 import teamSecretary from "../assets/SECRE.jpg";
