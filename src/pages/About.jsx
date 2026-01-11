@@ -42,22 +42,22 @@ const About = () => {
 
   const team = [
     {
-      name: "Nom du PDG",
+      name: "Esso Mawaki ASSIAH",
       role: "Président Directeur Général",
       image: teamCeo,
       linkedin:
         "https://www.linkedin.com/in/esso-mawaki-assiah-7742852a9?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
-      name: "Nom du DG",
+      name: "Kossi Daniel MOGLO",
       role: "Directeur Général",
       image: teamDg,
       linkedin:
         "https://www.linkedin.com/in/kossi-daniel-moglo-a85311243?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
-      name: "Nom de la Secrétaire",
-      role: "Secrétaire de Direction",
+      name: "Awaki KEZIE AGBA",
+      role: "Secrétaire Général",
       image: teamSecretary,
       linkedin:
         "https://www.linkedin.com/in/awaki-kezie-agba-899b022ab?utm_source=share_via&utm_content=profile&utm_medium=member_android",

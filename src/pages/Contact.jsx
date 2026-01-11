@@ -51,7 +51,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, title: "Email", value: "contact@mak-tg.com", link: "mailto:contact@mak-tg.com" },
-    { icon: Phone, title: "Téléphone", value: "+228 XX XX XX XX", link: "tel:+228XXXXXXXX" },
+    { icon: Phone, title: "Téléphone", value: "+228 91536877", link: "tel:+228 91536877" },
     { icon: MapPin, title: "Localisation", value: "Lomé, Togo", link: null },
     { icon: Clock, title: "Horaires", value: "Lun - Ven: 8h - 18h", link: null },
   ];
