@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Target,
-  Heart,
-  Users,
-  Lightbulb,
-  ArrowRight,
-  Linkedin,
-  Twitter,
-  Mail,
-} from "lucide-react";
+import { Target, Heart, Users, Lightbulb, ArrowRight, Linkedin } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SectionTitle from "../components/SectionTitle";
@@ -50,9 +41,27 @@ const About = () => {
   ];
 
   const team = [
-    { name: "Nom du PDG", role: "Président Directeur Général", image: teamCeo },
-    { name: "Nom du DG", role: "Directeur Général", image: teamDg },
-    { name: "Nom de la Secrétaire", role: "Secrétaire de Direction", image: teamSecretary },
+    {
+      name: "Nom du PDG",
+      role: "Président Directeur Général",
+      image: teamCeo,
+      linkedin:
+        "https://www.linkedin.com/in/esso-mawaki-assiah-7742852a9?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    },
+    {
+      name: "Nom du DG",
+      role: "Directeur Général",
+      image: teamDg,
+      linkedin:
+        "https://www.linkedin.com/in/kossi-daniel-moglo-a85311243?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    },
+    {
+      name: "Nom de la Secrétaire",
+      role: "Secrétaire de Direction",
+      image: teamSecretary,
+      linkedin:
+        "https://www.linkedin.com/in/awaki-kezie-agba-899b022ab?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    },
   ];
 
   return (
@@ -60,14 +69,19 @@ const About = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        {/* base */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black" />
 
-        {/* glows / decorations */}
-        <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 w-[520px] h-[520px] rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-transparent" />
+        {/* premium glows */}
+        <div className="absolute -top-44 -left-44 w-[620px] h-[620px] rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -bottom-52 -right-52 w-[620px] h-[620px] rounded-full bg-white/10 blur-3xl" />
+
+        {/* blue accents */}
+        <div className="absolute top-20 right-20 w-[420px] h-[420px] rounded-full bg-[#6BA3C7]/14 blur-3xl" />
+        <div className="absolute bottom-16 left-20 w-[360px] h-[360px] rounded-full bg-[#4A7FA7]/10 blur-3xl" />
+
+        {/* subtle gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.07] via-transparent to-transparent" />
 
         {/* subtle grid */}
         <div
@@ -81,7 +95,7 @@ const About = () => {
 
         <div className="container-custom relative z-10 pt-24 text-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white/90 text-sm font-medium border border-white/15 mb-8 shadow-[0_0_0_1px_rgba(255,255,255,0.05)] animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-white/70" />
+            <span className="w-2 h-2 rounded-full bg-[#6BA3C7]" />
             Notre Histoire
           </span>
 
@@ -97,12 +111,17 @@ const About = () => {
             Découvrez l'histoire et les valeurs de MAK Corporation
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center animate-fade-up stagger-4">
             <Link to="/services">
-              <Button variant="hero" size="lg" className="rounded-full">
+              <Button
+                variant="hero"
+                size="lg"
+                className="rounded-full shadow-[0_20px_80px_rgba(107,163,199,0.18)]"
+              >
                 Découvrir nos services <ArrowRight className="ml-2" />
               </Button>
             </Link>
+
             <Link to="/contact">
               <Button
                 variant="outline"
@@ -115,7 +134,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* fade bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent" />
       </section>
 
@@ -124,9 +142,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={visibleSections.story ? "animate-slide-in-left" : "opacity-0"}>
-              <span className="text-white/70 font-semibold mb-4 block tracking-wide">
-                NOTRE HISTOIRE
-              </span>
+              <span className="text-white/70 font-semibold mb-4 block tracking-wide">NOTRE HISTOIRE</span>
 
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6 tracking-tight">
                 Une vision née de la passion
@@ -140,20 +156,16 @@ const About = () => {
               </p>
 
               <div className="mt-8 flex items-center gap-3">
-                <div className="h-px w-12 bg-white/20" />
+                <div className="h-px w-12 bg-[#6BA3C7]/55" />
                 <span className="text-white/60 text-sm">MAK Corporation</span>
               </div>
             </div>
 
             <div className={`relative ${visibleSections.story ? "animate-slide-in-right" : "opacity-0"}`}>
-              <div className="absolute -inset-4 rounded-3xl bg-white/5 blur-xl" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.55)]">
-                <img
-                  src={aboutTeam}
-                  alt="Équipe MAK Corporation"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute -inset-4 rounded-3xl bg-[#6BA3C7]/12 blur-xl" />
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] shadow-[0_20px_80px_rgba(0,0,0,0.55)]">
+                <img src={aboutTeam} alt="Équipe MAK Corporation" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
               </div>
             </div>
           </div>
@@ -173,7 +185,7 @@ const About = () => {
             </h2>
 
             <div
-              className={`rounded-3xl p-8 md:p-12 border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.55)] ${
+              className={`rounded-3xl p-8 md:p-12 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.55)] ${
                 visibleSections.mission ? "animate-scale-in" : "opacity-0"
               }`}
             >
@@ -183,9 +195,7 @@ const About = () => {
                     <Target className="text-white" size={22} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-white text-lg mb-2">
-                      Notre Mission
-                    </h3>
+                    <h3 className="font-heading font-semibold text-white text-lg mb-2">Notre Mission</h3>
                     <p className="text-white/70 leading-relaxed">
                       Développer des solutions innovantes pour l'épanouissement des populations africaines.
                     </p>
@@ -197,9 +207,7 @@ const About = () => {
                     <Lightbulb className="text-white" size={22} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-semibold text-white text-lg mb-2">
-                      Notre Vision
-                    </h3>
+                    <h3 className="font-heading font-semibold text-white text-lg mb-2">Notre Vision</h3>
                     <p className="text-white/70 leading-relaxed">
                       Devenir le partenaire technologique de référence en Afrique de l'Ouest.
                     </p>
@@ -242,15 +250,11 @@ const About = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-5 group-hover:scale-[1.03] transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-5 group-hover:scale-[1.04] transition-transform duration-300">
                   <value.icon className="text-white" size={24} />
                 </div>
-                <h3 className="font-heading font-semibold text-white text-lg mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {value.description}
-                </p>
+                <h3 className="font-heading font-semibold text-white text-lg mb-2">{value.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -278,30 +282,26 @@ const About = () => {
                     />
                   </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  {/* overlay (ne bloque pas le clic grâce au z-10 du bouton) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="font-heading font-semibold text-white text-lg">
-                      {member.name}
-                    </h3>
-                    <p className="text-white/70 text-sm mb-4">
-                      {member.role}
-                    </p>
+                    <h3 className="font-heading font-semibold text-white text-lg">{member.name}</h3>
+                    <p className="text-white/70 text-sm mb-4">{member.role}</p>
 
-                    <div className="flex gap-2">
-                      {[Linkedin, Twitter, Mail].map((Icon, i) => (
-                        <a
-                          key={i}
-                          href="#"
-                          className="w-9 h-9 rounded-full border border-white/15 bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-white/20 hover:border-white/25 transition-colors"
-                        >
-                          <Icon size={15} className="text-white" />
-                        </a>
-                      ))}
-                    </div>
+                    {/* LinkedIn only -> redirection OK */}
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative z-10 inline-flex items-center gap-2 w-fit px-3 py-2 rounded-full border border-white/15 bg-white/10 backdrop-blur-md hover:bg-[#6BA3C7]/15 hover:border-[#6BA3C7]/45 transition-colors"
+                    >
+                      <Linkedin size={16} className="text-white" />
+                      <span className="text-white/85 text-sm font-medium">LinkedIn</span>
+                    </a>
                   </div>
 
-                  <div className="absolute inset-0 ring-1 ring-white/0 group-hover:ring-white/10 transition" />
+                  <div className="absolute inset-0 ring-1 ring-white/0 group-hover:ring-[#6BA3C7]/25 transition" />
                 </div>
               </div>
             ))}
@@ -327,10 +327,15 @@ const About = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact">
-                <Button variant="hero" size="lg" className="rounded-full">
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="rounded-full shadow-[0_20px_80px_rgba(107,163,199,0.18)]"
+                >
                   Postuler maintenant <ArrowRight className="ml-2" />
                 </Button>
               </Link>
+
               <Link to="/contact">
                 <Button
                   variant="outline"
