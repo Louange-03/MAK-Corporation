@@ -1,10 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Instagram, MessageCircle } from "lucide-react";
 import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/mak-corporation-bb4a813a3?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      icon: Linkedin,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/corporation.ma?igsh=MTFmcTBpbWRzMG1uaA==",
+      icon: Instagram,
+    },
+    {
+      name: "WhatsApp",
+      href: "https://whatsapp.com/channel/0029VbC7ol63bbVAH9LaVb18",
+      icon: MessageCircle,
+    },
+  ];
 
   return (
     <footer className="relative bg-black text-white overflow-hidden">
@@ -20,7 +38,12 @@ const Footer = () => {
             <div className="mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11">
-                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <svg
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                  >
                     <defs>
                       <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="rgba(255,255,255,0.40)" />
@@ -53,7 +76,9 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col leading-tight">
                   <span className="font-heading font-bold text-white text-xl">MAK</span>
-                  <span className="font-heading text-white/60 text-xs tracking-widest uppercase">Corporation</span>
+                  <span className="font-heading text-white/60 text-xs tracking-widest uppercase">
+                    Corporation
+                  </span>
                 </div>
               </div>
             </div>
@@ -62,11 +87,16 @@ const Footer = () => {
               Solutions technologiques innovantes pour l'épanouissement et le développement des populations africaines.
             </p>
 
+            {/* Social links (LinkedIn / Instagram / WhatsApp) */}
             <div className="flex gap-3">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+              {socialLinks.map(({ name, href, icon: Icon }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={name}
+                  title={name}
                   className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md flex items-center justify-center hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300"
                 >
                   <Icon size={18} className="text-white/85" />
@@ -87,7 +117,10 @@ const Footer = () => {
                 { name: "Contact", path: "/contact" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-white/70 hover:text-white transition-colors duration-300 text-sm">
+                  <Link
+                    to={link.path}
+                    className="text-white/70 hover:text-white transition-colors duration-300 text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -102,7 +135,10 @@ const Footer = () => {
               {["Développement Web", "Applications Mobile", "Systèmes & Réseaux", "Cybersécurité", "Design UI/UX"].map(
                 (service) => (
                   <li key={service}>
-                    <Link to="/services" className="text-white/70 hover:text-white transition-colors duration-300 text-sm">
+                    <Link
+                      to="/services"
+                      className="text-white/70 hover:text-white transition-colors duration-300 text-sm"
+                    >
                       {service}
                     </Link>
                   </li>
@@ -119,6 +155,7 @@ const Footer = () => {
                 <MapPin size={18} className="text-white/70 mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm">Lomé, Togo</span>
               </li>
+
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-white/70 flex-shrink-0" />
                 <a
@@ -128,6 +165,7 @@ const Footer = () => {
                   contact@mak-tg.com
                 </a>
               </li>
+
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-white/70 flex-shrink-0" />
                 <span className="text-white/70 text-sm">+228 XX XX XX XX</span>
@@ -139,6 +177,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">© {currentYear} MAK Corporation. Tous droits réservés.</p>
+
+          {/* Keep placeholders or replace with real pages when you have them */}
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               Politique de confidentialité
