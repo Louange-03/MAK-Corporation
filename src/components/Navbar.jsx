@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-medium py-2"
+          ? "bg-white/80 backdrop-blur-lg border-b border-black/5 shadow-sm py-2"
           : "bg-transparent py-4"
       }`}
     >
@@ -41,14 +41,14 @@ const Navbar = () => {
             <Logo size={scrolled ? "small" : "default"} />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-medium transition-all duration-300 ${
-                  scrolled ? "text-foreground" : "text-white"
+                className={`relative font-medium transition-colors duration-300 ${
+                  scrolled ? "text-gray-900" : "text-white"
                 } ${
                   isActive(link.path)
                     ? "text-secondary"
@@ -58,23 +58,27 @@ const Navbar = () => {
                 {link.name}
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 bg-secondary transition-all duration-300 ${
-                    isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
+                    isActive(link.path) ? "w-full" : "w-0 hover:w-full"
                   }`}
                 />
               </Link>
             ))}
+
             <Link to="/contact">
-              <Button variant={scrolled ? "default" : "heroOutline"} size="sm">
+              <Button
+                variant={scrolled ? "default" : "heroOutline"}
+                size="sm"
+              >
                 Nous Contacter
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? "text-foreground" : "text-white"
+            className={`lg:hidden p-2 rounded-xl transition-colors ${
+              scrolled ? "text-gray-900" : "text-white"
             }`}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,30 +88,33 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 ${
+        className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-300 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div className="container-custom py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={`font-medium py-2 transition-colors ${
-                isActive(link.path)
-                  ? "text-secondary"
-                  : "text-foreground hover:text-secondary"
-              }`}
-            >
-              {link.name}
+        <div className="bg-white/95 backdrop-blur-lg border-t border-black/5 shadow-lg">
+          <div className="container-custom py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`font-medium py-2 transition-colors ${
+                  isActive(link.path)
+                    ? "text-secondary"
+                    : "text-gray-900 hover:text-secondary"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              <Button variant="default" className="w-full mt-2">
+                Nous Contacter
+              </Button>
             </Link>
-          ))}
-          <Link to="/contact" onClick={() => setIsOpen(false)}>
-            <Button variant="default" className="w-full mt-2">
-              Nous Contacter
-            </Button>
-          </Link>
+          </div>
         </div>
       </div>
     </nav>
